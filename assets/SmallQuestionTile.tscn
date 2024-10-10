@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwg055nfnkll"]
+
+[ext_resource type="Texture2D" uid="uid://dcnyfgcwd14xh" path="res://assets/Icons/BETAquestiontile.png" id="1_ulmoi"]
+
+[node name="QuestionCard" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ulmoi")

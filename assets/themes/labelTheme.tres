@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ck2kxqs71lcyx"]
+
+[ext_resource type="FontFile" uid="uid://fg17rsuu7bud" path="res://assets/fonts/gabriola Font Download.ttf" id="1_jldx5"]
+
+[resource]
+Label/colors/font_color = Color(0.458824, 0.643137, 0.498039, 1)
+Label/font_sizes/font_size = 128
+Label/fonts/font = ExtResource("1_jldx5")

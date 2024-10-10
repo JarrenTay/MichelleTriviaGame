@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmcrf70yp8crb"]
+
+[ext_resource type="Script" path="res://scenes/player_card.gd" id="1_1lujp"]
+[ext_resource type="Theme" uid="uid://3weqb2doyxkn" path="res://assets/themes/TeamTheme.tres" id="1_d6eet"]
+[ext_resource type="SpriteFrames" uid="uid://cmh0j3gwc62nr" path="res://assets/Icons/FrogSpriteFrames.tres" id="2_tryfq"]
+[ext_resource type="PackedScene" uid="uid://dbtxk3ja0x0qd" path="res://assets/frog_timer.tscn" id="4_wiy4o"]
+
+[node name="PlayerCard" type="Control"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_1lujp")
+
+[node name="PlayerLabelContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 20.0
+offset_right = 1000.0
+offset_bottom = 320.0
+alignment = 1
+
+[node name="Label" type="Label" parent="PlayerLabelContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_d6eet")
+text = "Team"
+
+[node name="PlayerIcon" type="MarginContainer" parent="PlayerLabelContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerLabelContainer/PlayerIcon"]
+scale = Vector2(0.46, 0.46)
+sprite_frames = ExtResource("2_tryfq")
+animation = &"frog"
+offset = Vector2(300, 250)
+
+[node name="ScoreContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 229.81
+offset_right = 1000.0
+offset_bottom = 485.81
+alignment = 1
+
+[node name="Label" type="Label" parent="ScoreContainer"]
+layout_mode = 2
+theme = ExtResource("1_d6eet")
+text = "0"
+
+[node name="FrogTimer" parent="." instance=ExtResource("4_wiy4o")]
+visible = false
+position = Vector2(500, 520)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="mouse_entered" from="PlayerLabelContainer/Label" to="." method="_on_label_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerLabelContainer/Label" to="." method="_on_label_mouse_exited"]

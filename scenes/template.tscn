@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm0f8m5wsdgoh"]
+
+[ext_resource type="Theme" uid="uid://cyvcw77em65ca" path="res://assets/themes/HeaderTheme.tres" id="1_l7gq5"]
+[ext_resource type="Theme" uid="uid://bwnx8hvq56bb" path="res://assets/themes/ButtonTheme.tres" id="2_bqsy6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 1, 0.878431, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_l7gq5")
+text = "Michelle's Trivia Game"
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+
+[node name="BeginButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_bqsy6")
+text = "Begin"

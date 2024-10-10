@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cmh0j3gwc62nr"]
+
+[ext_resource type="Texture2D" uid="uid://d3l4pk881hrr3" path="res://assets/Icons/FrogIcon.png" id="1_8t0m3"]
+[ext_resource type="Texture2D" uid="uid://ci5ibplt2iqio" path="res://assets/Icons/MushroomIcon.png" id="2_m84or"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8t0m3")
+}],
+"loop": true,
+"name": &"frog",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m84or")
+}],
+"loop": true,
+"name": &"mushroom",
+"speed": 5.0
+}]

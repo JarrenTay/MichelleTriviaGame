@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://ugsyxnqnqwsy"]
+
+[ext_resource type="Script" path="res://assets/win_screen.gd" id="1_f27nl"]
+[ext_resource type="Theme" uid="uid://cyvcw77em65ca" path="res://assets/themes/HeaderTheme.tres" id="1_nyyvr"]
+[ext_resource type="SpriteFrames" uid="uid://cmh0j3gwc62nr" path="res://assets/Icons/FrogSpriteFrames.tres" id="3_wik37"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f27nl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 1, 0.878431, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -128.0
+offset_right = 390.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nyyvr")
+text = "Winner!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftWinner" type="AnimatedSprite2D" parent="."]
+position = Vector2(862, 1051)
+sprite_frames = ExtResource("3_wik37")
+animation = &"frog"
+
+[node name="RightWinner" type="AnimatedSprite2D" parent="."]
+position = Vector2(2997, 1069)
+sprite_frames = ExtResource("3_wik37")
+animation = &"frog"

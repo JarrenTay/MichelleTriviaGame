@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqg7qpow3tn8k"]
+
+[ext_resource type="Script" path="res://assets/tfquestion.gd" id="1_fhavv"]
+[ext_resource type="Theme" uid="uid://ck2kxqs71lcyx" path="res://assets/themes/labelTheme.tres" id="1_n0kq4"]
+[ext_resource type="StyleBox" uid="uid://dqvq4d6m2m28r" path="res://assets/themes/flatbutton.tres" id="2_ncsn8"]
+
+[sub_resource type="Theme" id="Theme_xsvc8"]
+Button/styles/disabled = ExtResource("2_ncsn8")
+Button/styles/focus = ExtResource("2_ncsn8")
+Button/styles/hover = ExtResource("2_ncsn8")
+Button/styles/normal = ExtResource("2_ncsn8")
+Button/styles/pressed = ExtResource("2_ncsn8")
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(0, 129)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_fhavv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 2374.0
+offset_bottom = 115.0
+theme = SubResource("Theme_xsvc8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button"]
+custom_minimum_size = Vector2(0, 129)
+layout_mode = 0
+offset_right = 2412.0
+offset_bottom = 129.0
+
+[node name="Number" type="Label" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("1_n0kq4")
+text = "1"
+
+[node name="Question" type="Label" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(2000, 0)
+layout_mode = 2
+theme = ExtResource("1_n0kq4")
+text = "Example True or False Question"
+
+[node name="True" type="Label" parent="Button/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_n0kq4")
+text = "T"
+
+[node name="False" type="Label" parent="Button/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_n0kq4")
+text = "F"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

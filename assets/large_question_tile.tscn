@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://di4d24kqu1d85"]
+
+[ext_resource type="Script" path="res://assets/large_question_tile.gd" id="1_lm1kp"]
+[ext_resource type="Texture2D" uid="uid://cl1wkgwj1ecpo" path="res://assets/Icons/LargeQuestionTile.png" id="1_ymips"]
+[ext_resource type="Theme" uid="uid://cyvcw77em65ca" path="res://assets/themes/HeaderTheme.tres" id="2_pappl"]
+[ext_resource type="Theme" uid="uid://ck2kxqs71lcyx" path="res://assets/themes/labelTheme.tres" id="3_8a6j8"]
+[ext_resource type="PackedScene" uid="uid://dbtxk3ja0x0qd" path="res://assets/frog_timer.tscn" id="5_wx733"]
+
+[node name="LargeQuestionTile" type="Node2D"]
+script = ExtResource("1_lm1kp")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -1100.0
+offset_top = -725.0
+offset_right = 1100.0
+offset_bottom = 725.0
+texture_normal = ExtResource("1_ymips")
+
+[node name="Points" type="Label" parent="."]
+custom_minimum_size = Vector2(2000, 0)
+offset_left = -1000.0
+offset_top = -650.0
+offset_right = 1000.0
+offset_bottom = -394.0
+theme = ExtResource("2_pappl")
+text = "100 Points"
+horizontal_alignment = 1
+
+[node name="Question" type="Label" parent="."]
+custom_minimum_size = Vector2(2000, 1000)
+offset_left = -1000.0
+offset_top = -400.0
+offset_right = 1000.0
+offset_bottom = 600.0
+theme = ExtResource("3_8a6j8")
+text = "In 2021, Michelle lost one of her body parts. What part of her body did she lose?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -750.0
+offset_top = -350.0
+offset_right = 750.0
+offset_bottom = 450.0
+
+[node name="FrogTimer" parent="." instance=ExtResource("5_wx733")]
+position = Vector2(0, 500)
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,239 @@
+[gd_scene load_steps=20 format=3 uid="uid://bjanalye8n86v"]
+
+[ext_resource type="PackedScene" uid="uid://cmcrf70yp8crb" path="res://scenes/player_card.tscn" id="1_00cwx"]
+[ext_resource type="Script" path="res://scenes/game_board.gd" id="1_mrrwf"]
+[ext_resource type="StyleBox" uid="uid://bx3io8o4qwwu" path="res://assets/themes/transparentBoxStyle.tres" id="3_lqtxs"]
+[ext_resource type="Theme" uid="uid://b0p8q1wvdfvmn" path="res://assets/themes/WheelTheme2.tres" id="3_x6q6d"]
+[ext_resource type="PackedScene" uid="uid://y8614bi5il7n" path="res://assets/wheel.tscn" id="5_f7fwf"]
+[ext_resource type="Texture2D" uid="uid://dksto8s6jao6p" path="res://assets/Icons/qt1.png" id="5_pg7gd"]
+[ext_resource type="Texture2D" uid="uid://cif4oms43sl30" path="res://assets/Icons/qt12.png" id="6_bta0a"]
+[ext_resource type="PackedScene" uid="uid://c81yi345884pt" path="res://assets/wheel2.tscn" id="7_kdqhb"]
+[ext_resource type="Texture2D" uid="uid://dms1nn704xkgb" path="res://assets/Icons/qt7.png" id="7_oo624"]
+[ext_resource type="Texture2D" uid="uid://b0qdtovythuv3" path="res://assets/Icons/qt2.png" id="8_bd1li"]
+[ext_resource type="Texture2D" uid="uid://d3gddscebsdlm" path="res://assets/Icons/qt8.png" id="9_2fmvu"]
+[ext_resource type="Texture2D" uid="uid://dme8wd70m4dbn" path="res://assets/Icons/qt3.png" id="10_cp1am"]
+[ext_resource type="Texture2D" uid="uid://b3kn2cpebym7f" path="res://assets/Icons/qt9.png" id="11_lpa5c"]
+[ext_resource type="Texture2D" uid="uid://c1etr275j31n8" path="res://assets/Icons/qt4.png" id="12_dcqdj"]
+[ext_resource type="Texture2D" uid="uid://bs4g8a5bqlh4c" path="res://assets/Icons/qt10.png" id="13_18h5d"]
+[ext_resource type="Texture2D" uid="uid://cfnr2q5gv6jc7" path="res://assets/Icons/qt5.png" id="14_00hrq"]
+[ext_resource type="Texture2D" uid="uid://cr25nl0rxhpb2" path="res://assets/Icons/qt11.png" id="15_rgs61"]
+[ext_resource type="Texture2D" uid="uid://dbwfpofe2sw5l" path="res://assets/Icons/qt6.png" id="16_f5k5q"]
+
+[sub_resource type="Theme" id="Theme_rulvd"]
+ItemList/colors/font_color = Color(1, 1, 1, 0)
+ItemList/colors/font_hovered_color = Color(1, 1, 1, 0)
+ItemList/colors/font_outline_color = Color(1, 1, 1, 0)
+ItemList/colors/font_selected_color = Color(1, 1, 1, 0)
+ItemList/colors/guide_color = Color(1, 1, 1, 0)
+ItemList/constants/h_separation = 50
+ItemList/constants/icon_margin = 15
+ItemList/constants/line_separation = 0
+ItemList/constants/outline_size = 0
+ItemList/constants/v_separation = 35
+ItemList/styles/cursor = ExtResource("3_lqtxs")
+ItemList/styles/cursor_unfocused = ExtResource("3_lqtxs")
+ItemList/styles/focus = ExtResource("3_lqtxs")
+ItemList/styles/hovered = ExtResource("3_lqtxs")
+ItemList/styles/panel = ExtResource("3_lqtxs")
+ItemList/styles/selected = ExtResource("3_lqtxs")
+ItemList/styles/selected_focus = ExtResource("3_lqtxs")
+
+[node name="GameBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrrwf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 1, 0.878431, 1)
+
+[node name="ScoreListContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 959.0
+offset_bottom = 2160.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Control" type="Control" parent="ScoreListContainer"]
+custom_minimum_size = Vector2(0, 45.165)
+layout_mode = 2
+
+[node name="PlayerCard" parent="ScoreListContainer" instance=ExtResource("1_00cwx")]
+layout_mode = 2
+
+[node name="PlayerCard2" parent="ScoreListContainer" instance=ExtResource("1_00cwx")]
+layout_mode = 2
+
+[node name="GameBoardContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2625.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="GameBoardContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameBoardContainer"]
+layout_mode = 2
+theme = ExtResource("3_x6q6d")
+text = "Round 1"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="GameBoardContainer"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="GameBoardContainer"]
+custom_minimum_size = Vector2(2625, 1800)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_rulvd")
+item_count = 12
+max_columns = 4
+same_column_width = true
+fixed_column_width = 600
+item_0/text = ""
+item_0/icon = ExtResource("5_pg7gd")
+item_1/text = ""
+item_1/icon = ExtResource("14_00hrq")
+item_2/text = ""
+item_2/icon = ExtResource("7_oo624")
+item_3/text = ""
+item_3/icon = ExtResource("8_bd1li")
+item_4/text = ""
+item_4/icon = ExtResource("9_2fmvu")
+item_5/text = ""
+item_5/icon = ExtResource("10_cp1am")
+item_6/text = ""
+item_6/icon = ExtResource("11_lpa5c")
+item_7/text = ""
+item_7/icon = ExtResource("12_dcqdj")
+item_8/text = ""
+item_8/icon = ExtResource("13_18h5d")
+item_9/text = ""
+item_9/icon = ExtResource("6_bta0a")
+item_10/text = ""
+item_10/icon = ExtResource("15_rgs61")
+item_11/text = ""
+item_11/icon = ExtResource("16_f5k5q")
+
+[node name="WheelContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2625.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="WheelContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WheelContainer"]
+layout_mode = 2
+theme = ExtResource("3_x6q6d")
+text = "The Wheel of Incredible Circumstance"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="WheelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WheelContainer"]
+custom_minimum_size = Vector2(2625, 1800)
+layout_mode = 2
+
+[node name="Wheel" parent="WheelContainer/MarginContainer" instance=ExtResource("5_f7fwf")]
+position = Vector2(1100, 950)
+
+[node name="WheelContainer2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2625.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="WheelContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WheelContainer2"]
+layout_mode = 2
+theme = ExtResource("3_x6q6d")
+text = "The 2nd Wheel of Incredible Circumstance"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="WheelContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WheelContainer2"]
+custom_minimum_size = Vector2(2625, 1800)
+layout_mode = 2
+
+[node name="Wheel2" parent="WheelContainer2/MarginContainer" instance=ExtResource("7_kdqhb")]
+position = Vector2(1100, 950)
+
+[node name="FinalScreen" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2625.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="FinalScreen"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FinalScreen"]
+layout_mode = 2
+theme = ExtResource("3_x6q6d")
+text = "Final Round"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="FinalScreen"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="FinalScreen"]
+custom_minimum_size = Vector2(2625, 1800)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FinalScreen/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[connection signal="item_clicked" from="GameBoardContainer/ItemList" to="." method="_on_item_list_item_clicked"]

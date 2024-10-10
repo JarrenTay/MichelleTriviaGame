@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://y8614bi5il7n"]
+
+[ext_resource type="Script" path="res://Wheel.gd" id="1_hc28b"]
+[ext_resource type="Texture2D" uid="uid://6hm82l6ukxc3" path="res://assets/Icons/Wheel.png" id="2_6p6j8"]
+[ext_resource type="Texture2D" uid="uid://bl3j2w2brysna" path="res://assets/Icons/Pointer.png" id="3_1eojl"]
+[ext_resource type="Texture2D" uid="uid://bvy0bfrgxr3vs" path="res://assets/Icons/Spin.png" id="4_nrime"]
+
+[node name="Wheel" type="Node2D"]
+script = ExtResource("1_hc28b")
+
+[node name="WheelSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_6p6j8")
+
+[node name="Pointer" type="Sprite2D" parent="."]
+position = Vector2(800, 0)
+texture = ExtResource("3_1eojl")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 500.0
+offset_top = 250.0
+offset_right = 1300.0
+offset_bottom = 850.0
+texture_normal = ExtResource("4_nrime")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
